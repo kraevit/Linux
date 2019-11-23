@@ -1,0 +1,44 @@
+horrow's Arch Linux Post Installation Guide 2019,
+after an minimal linux install
+
+// comment
+# command
+
+// Setup users and groups
+
+# useradd -m -g wheel horrow
+# passwd horrow
+
+// Give sudo access to newly create user by editing /etc/sudoers
+
+// X Server setup
+
+# pacman -S xorg-server xorg-xinit
+
+// You can start X by running "xinit" or "startx" - this will read ~/xinitrc to know what DE to start
+
+// DE Installtion ( XFCE4 )
+
+# pacman -S xfce4 xfce4-goodies
+# vim ~/.xinitrc
+exec startxfce4
+
+# startx
+
+// Setup fonts
+
+# pacman -S ttf-linux-liberine ttf-inconsolata
+# pacman -S noto-fonts
+
+// Setup fonts manually
+
+# vim ~/.config/fontconfig/fonts.conf
+
+////// Notes:
+// Autostart service
+
+# sudo systemctl enable NetworkManager
+
+// Start service NOW
+
+# sudo systemstcl start ServiceName
