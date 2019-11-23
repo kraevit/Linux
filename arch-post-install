@@ -31,6 +31,7 @@ exec startxfce4
 # pacman -S noto-fonts
 
 // Setup fonts manually
+// https://wiki.archlinux.org/index.php/Font_configuration#Fontconfig_configuration
 
 # vim ~/.config/fontconfig/fonts.conf
 
