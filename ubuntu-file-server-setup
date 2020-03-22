@@ -32,7 +32,7 @@ address manually. Also go to router settings and exclude
 this ip from DHCP!!!
 
 IP address:
-192.168.0.100/24
+192.168.0.100/24 ( !NOTE the part where it sais /24 represent the subnet mask e.g: 255.255.255.0 )
 
 Gateway:
 ________________
