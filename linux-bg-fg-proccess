@@ -1,0 +1,11 @@
+### Background and ForeGround Proccesses ###
+############################################
+
+cntr+z
+
+$ jobs
+
+$ fg
+$ fg 1
+$ fg 2
+$ fg n
