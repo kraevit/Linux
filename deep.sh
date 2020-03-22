@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## go_deep.sh ##
+## deep.sh ##
 ################
 
 echo -e "deep.sh script by horrow \n\n"
