@@ -3,7 +3,7 @@
 ## go_deep.sh ##
 ################
 
-echo -e "GoDeep by horrow https://keytothe.net/\n\n"
+echo -e "deep.sh script by horrow \n\n"
 echo -e "To stop the script press Cntrl+C\n"
 
 ## Check if tor is installed? ##
