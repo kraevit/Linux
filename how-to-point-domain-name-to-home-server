@@ -1,1 +1,61 @@
-https://www.youtube.com/watch?v=aPqDQX5naHA
+### How to point Domain Name to Home Web Server - Ubuntu ###
+############################################################
+
+LINK: https://www.youtube.com/watch?v=aPqDQX5naHA
+
+
+[ !NOTE - PORT FORWARD 80 ROUTER ]
+
+sudo -i
+
+vim /etc/hosts
+
+127.0.0.1	localhost
+
+0.0.0.0		your-domain-name.com
+0.0.0.0		www.your-domain-name.com
+
+ESC :wq
+
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-
+
+available/your-domain-name.com.conf
+
+vim /etc/apache2/sites-available/your-domain-name.com.conf
+
+
+
+<VirtualHost your-domain-name:80>
+
+	ServerName www.your-domain-name.com
+	ServerName your-domain-name.com
+
+		ServerAdmin your-email@gmail.com
+        	DocumentRoot /var/www/your-domain-name/public_html
+
+ESC :wq
+
+
+[ !NOTE - FOR Setting UP Secondary DOMAIN name DO THE SAME AS ABOVE ]
+
+sudo a2ensite your-domain-name.com.conf
+sudo a2ensite secondary-domain-name.com.conf
+
+mkdir /var/www/your-domain-name/public_html
+
+cd /var/www/your-domain-name/puclic_html
+
+touch index.html
+
+vim index.html
+
+ESC :wq
+
+sudo service apache2 restart
+
+### GO TO THE HOST ( GODADDY / SUPERHOSTING ) ###
+#################################################
+
+Manage Domains -> Domain Settings -> Manage DNS -> TYPE A NAME @ -> Enter 
+
+Your Static IP Address
