@@ -1,0 +1,24 @@
+### Install Webmin ###
+######################
+
+sudo vim /etc/apt/sources.list.d/webmin.list
+
+deb http://download.webmin.com/download/repository sarge contrib
+
+sudo apt-get update
+
+(error install key)
+
+cd ~
+
+download key from the website
+
+wget http://www.webmin.com/jcameron-key.asc
+
+sudo apt-key add jcameron-key.asc
+
+rm jscameron-key.asc
+
+sudo apt-get update
+
+sudo apt install webmin
