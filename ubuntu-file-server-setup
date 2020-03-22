@@ -1,0 +1,298 @@
+### How to Setup a Dedicated Home File Server ###
+### Using Ubuntu Linux & Samba ###
+
+### Download Ubuntu Server ###
+### Burn the ISO File ###
+### Installation stepes ###
+
+[!] Configure the network
+
+Please enter the hostname for this system
+
+The hostname is a single word that identifies your system
+to the network. If you don't know what your hostname 
+
+should be, consult your nework administrator. If you are 
+
+setting up your own home network, you can make something 
+
+up here.
+
+Hostname:
+ubuntu_______________
+
+<Go Back>	<Continue>
+
+### Hit "Tab" and Select <Go Back>
+### Configure the network manually
+### Instead of using DHCP we must assign static IP
+address manually. Also go to router settings and exclude
+this ip from DHCP!!!
+
+IP address:
+192.168.0.100/24
+
+Gateway:
+________________
+
+Name Server addresses:
+Should be the same as Gateway
+
+[!] Configure the network
+
+Hostname:
+Server___________
+
+Domain name:
+Leave it blank/empty
+
+[!!] Set up users and passwords
+
+### Create user to config the server ( only you should 
+
+know )
+
+Full name for the new user:
+
+Krasimir Kraev
+
+User name for your account:
+
+kraev
+
+Choose password for the new user:
+
+enter password____
+
+### Dont encrypt home folder
+
+[!!] Partion disks
+Use entire disk
+
+[!] Configuring taskel
+
+Install security updates automatically
+
+[!] Software selection
+
+OpenSSH server
+Lamp server
+Samba file server
+
+<Continue>
+
+### Post install ###
+
+Login
+
+Install updates
+
+sudo apt-get update
+sudo apt-get upgrade
+
+Restart
+
+sudo shutdown now -r
+
+Login Again
+
+### Configure Samba Server ###
+### Create linux user accounts
+
+sudo adduser me
+sudo adduser wife
+sudo adduser kid
+
+### Do the same on samba
+### passwords must be the same!!!
+
+sudo smbpasswd -a me
+enter the same password like linux user
+
+sudo smbpasswd -a wife
+sudo smbpasswd -a kid
+
+### Create directories for sharing ###
+######################################
+
+sudo mkdir /Everybody
+sudo mkdir /Everybody/Music
+sudo mkdir /Everybody/Videos
+
+sudo mkdir /MyStuff
+sudo mkdir /WifeStuff
+sudo mkdir /KidStuff
+
+
+### Assign permissions to the folders
+
+sudo chmod 777 /Everybody
+sudo chmod 777 /Everybody/Music 
+sudo chmod 777 /Everybody/Videos
+sudo chmod 777 /MyStuff
+sudo chmod 777 /WifeStuff
+sudo chmod 777 /KidStuff
+
+
+### Modify Samba Config File ###
+################################
+
+sudo vim /etc/samba/smb.conf
+
+
+### Verify the workgroup shown !!!
+
+[global]
+
+ workgroup = WORKGROUP
+
+### Scroll down the the very bottom on the file and add
+the following
+
+[Everybody]
+ path = /Everybody
+ browseable = yes
+ read only = no
+ valid users = kid me wife
+
+[Music]
+ path = /Everybody/Music
+ browseable = yes
+ read only = no
+ valid users = kid me wife
+
+[Videos]
+ path = /Everybody/Videos
+ browseable = yes
+ read only = no
+ valid users = kid me wife
+
+[MyStuff]
+ path = /MyStuff
+ browseable = no
+ read only = no
+ valid users = me
+
+[WifeStuff]
+ path = /WifeStuff
+ browseable = no
+ read only = no
+ valid users = wife
+
+[KidStuff]
+ path = /KidStuff
+ browseable = no
+ read only = no
+ valid users = kid wife
+
+## Hit esc and type :wq
+
+### Test Config File for Errors ###
+###################################
+
+
+testparm /etc/samba/smb.conf
+
+### Optional tool to improve SECURITY ###
+#########################################
+
+### Prevent login access to the server
+
+sudo vim /etc/passwd
+
+### Go to the bottom lines and change
+
+me:x:1001:10001:,,,:/home/me:/bin/bash
+wife:x:1002:10002:,,,:/home/wife:/bin/false
+kid:x:1003:10003:,,,:/home/kid:/bin/false
+
+############## Server is Ready ##############
+#############################################
+
+### Test Everything ###
+#######################
+
+### Test on Windows ###
+
+### Make sure network discovery is turned on !!!
+
+### Thic PC -> Network -> You should see Everybody, 
+
+Music, Videos folders
+
+### Windows kid account ###
+
+This PC -> Network(Right Click) -> Map Network Drive ->
+Folder: \\192.168.0.100\KidStuff
+
+* Reconnect at sign-in
+
+### Logout and login as me ###
+##############################
+
+This PC -> Network(Right Click) -> Map Network Drive ->
+Folder: \\192.168.0.100\MyStuff
+
+### Logout and login as wife ###
+################################
+
+This PC -> Network(Right Click) -> Map Network Drive ->
+Folder: \\192.168.0.100\WifeStuff
+
+### Test on Linux Mint ###
+#####################
+
+How to connect if logged in with a user that is not added
+to the server???
+
+Computer -> Connect to Server
+Server: 192.168.0.100
+Type: Windows share
+Folder /Everybody
+
+Domain name: WORKGROUP
+User name: me
+Password: pass
+
+* Remember this password
+
+### Try login from another Linux mint machine as wife ###
+#################################################
+
+Computer -> Connect to Server
+Server: 192.168.0.100
+Type: Windows share
+Folder: /WifeStuff
+
+Domain name: WORKGROUP
+User name: wife
+Password: pass
+
+* Remember this password
+
+
+Computer -> Connect to Server
+Server: 192.168.0.100
+Type: Windows share
+Folder: /KidStuff
+
+Domain name: WORKGROUP
+User name: wife
+Password: pass
+
+* Remember this password
+
+
+### Logout and try to login as kid on the machine ###
+#####################################################
+
+Computer -> Connect to Server
+Server: 192.168.0.100
+Type: Windows share
+Folder: /KidStuff
+
+Domain name: WORKGROUP
+User name: kid
+Password: pass
+
+* Remember this password
