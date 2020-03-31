@@ -62,17 +62,3 @@ systemctl reload apache2
 # Modify hosts file
 127.0.0.1 userA.com
 127.0.0.1 userB.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
