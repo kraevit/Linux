@@ -39,8 +39,9 @@ timedatectl set-ntp true
 
 ! Partition Table Example
 
-BOOT    SWAP       ROOT    HOME
-300M    RAMx1.5    40G     500G 
+| BOOT | SWAP | ROOT | HOME |
+| ---- | ---- | ---- | ---- |
+| 300M | RAMx1.5 | 40G | 500G | 
 
 ```bash
 lsblk
