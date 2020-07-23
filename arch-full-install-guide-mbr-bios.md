@@ -1,27 +1,5 @@
 # Arch Linux Full Install on MBR/Bios with XFCE4
 
-1. [Internet Configuration](#1-internet-configuration)
-2. [Disks](#2-disks)
-3. [Base Install](#3-base-install)
-4. [FSTAB File](#4-fstab-file)
-5. [Enter Install](#5-enter-install)
-6. [Time Zone](#6-time-zone)
-7. [Locales](#7-locales)
-8. [Hostname](#8-hostname)
-9. [Hosts file](#9-hosts-file)
-10. [Root Password](#10-root-password)
-11. [Boot Loader](#11-boot-loader)
-12. [Exit Install](#12-exit-installer)
-13. [Unmount](#13-unmount)
-14. [Reboot](#14-reboot)
-15. [Activate Internet](#15-activate-internet)
-16. [New User](#16-new-user)
-17. [Graphics Driver](#17-graphics-driver)
-18. [Display Server](#18-display-server)
-19. [Display Manager](#19-display-manager)
-20. [Desktop Install](#20-desktop-install)
-21. [Fonts Configuration](#21-fonts-configuration)
-
 ### <a name="1-internet-configuration">1. Internet Configuration</a>
 
 ```bash
@@ -263,3 +241,25 @@ vim ~/.config/fontconfig/fonts.conf
     </match>
 </fontconfig>
 ```
+
+1. [Internet Configuration](#1-internet-configuration)
+2. [Disks](#2-disks)
+3. [Base Install](#3-base-install)
+4. [FSTAB File](#4-fstab-file)
+5. [Enter Install](#5-enter-install)
+6. [Time Zone](#6-time-zone)
+7. [Locales](#7-locales)
+8. [Hostname](#8-hostname)
+9. [Hosts file](#9-hosts-file)
+10. [Root Password](#10-root-password)
+11. [Boot Loader](#11-boot-loader)
+12. [Exit Install](#12-exit-installer)
+13. [Unmount](#13-unmount)
+14. [Reboot](#14-reboot)
+15. [Activate Internet](#15-activate-internet)
+16. [New User](#16-new-user)
+17. [Graphics Driver](#17-graphics-driver)
+18. [Display Server](#18-display-server)
+19. [Display Manager](#19-display-manager)
+20. [Desktop Install](#20-desktop-install)
+21. [Fonts Configuration](#21-fonts-configuration)
