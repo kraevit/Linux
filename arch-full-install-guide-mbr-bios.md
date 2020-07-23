@@ -2,9 +2,6 @@
 
 1. [Internet Configuration](#1-internet-configuration)
 2. [Disks](#2-disks)
-    2.1. [Partitioning](#2-a-partitioning)
-    2.2. [Formatting](#2-b-formatting)
-    2.3. [Mounting](#2-cmounting)
 3. [Base Install](#3-base-install)
 4. [FSTAB File](#4-fstab-file)
 5. [Enter Install](#5-enter-install)
@@ -23,7 +20,7 @@
 18. [Display Server](#18-display-server)
 19. [Display Manager](#19-display-manager)
 20. [Desktop Install](#20-desktop-install)
-21. [Setup Fonts](#21-setup-fonts)
+21. [Fonts Configuration](#21-fonts-configuration)
 
 ### <a name="1-internet-configuration">1. Internet Configuration</a>
 
@@ -33,7 +30,7 @@
 # timedatectl set-ntp true
 ```
 
-### 2. Disks
+### <a name="2-disks">2. Disks</a>
 
 #### a) Partitioning
 
@@ -76,33 +73,33 @@ mount /path-to-root /mnt
 # lsblk
 ```
 
-### 3. Base Install
+### <a name="3-base-install">3. Base Install</a>
 
 ```bash
 # pacstrap /mnt base linux linux-firmware vim
 ```
 
-### 4. FSTAB File
+### <a name="4-fstab-file">4. FSTAB File</a>
 
 ```bash
 # genfstab -U /mnt >> /mnt/etc/fstab
 # cat /mnt/etc/fstab
 ```
 
-### 5. Enter Install
+### <a name="5-enter-install">5. Enter Install</a>
 
 ```bash
 # arch-chroot /mnt
 ```
 
-### 6. Time Zone
+### <a name="6-time-zone">6. Time Zone</a>
 
 ```bash
 # ln -sf /usr/share/zoneinfo/Europe/Sofia /etc/localtime
 # hwclock --systohc
 ```
 
-### 7. Locales
+### <a name="7-locales">7. Locales</a>
 
 ```bash
 # vim /etc/locale.gen
@@ -117,7 +114,7 @@ mount /path-to-root /mnt
 LANG=en_US.UTF-8
 ```
 
-### 8. Hostname
+### <a name="8-hostname">8. Hostname</a>
 
 ```bash
 # vim /etc/hostname
@@ -125,7 +122,7 @@ myhostname
 example hostname: arch
 ```
 
-### 9. Hosts file
+### <a name="9-hosts-file">9. Hosts file</a>
 
 ```bash
 # vim /etc/hosts
@@ -134,13 +131,13 @@ example hostname: arch
 127.0.0.1	arch.localdomain	arch
 ```
 
-### 10. Root Password
+### <a name="10-root-password">10. Root Password</a>
 
 ```bash
 # passwd
 ```
 
-### 11. Boot Loader
+### <a name="11-boot-loader">11. Boot Loader</a>
 
 ```bash
 # pacman -S networkmanager network-manager-applet dialog wireless_tools wpa_supplicant iputils os-prober mtools dosfstools base-devel linux-headers
@@ -148,23 +145,27 @@ example hostname: arch
 # grub-install --target=i386-pc /dev/sda
 # os-prober
 # grub-mkconfig -o /boot/grub/grub.cfg
+```
 
+### <a name="12-exit-installer">12. Exit Installer</a>
+
+```bash
 # exit
 ```
 
-### 13. Unmount
+### <a name="13-unmount">13. Unmount</a>
 
 ```bash
 # umount -a
 ```
 
-### 14. Reboot 
+### <a name="14-reboot">14. Reboot</a> 
 
 ```bash
 # reboot
 ```
 
-### 15. Activate Internet
+### <a name="15-activate-internet">15. Activate Internet</a>
 
 ```bash
 # systemctl start NetworkManager
@@ -173,7 +174,7 @@ example hostname: arch
 # systemctl enable NetworkManager
 ```
 
-### 16. New User
+### <a name="16-new-user">16. New User</a>
 
 ```bash
 # useradd -m -G wheel your-user-name
@@ -186,7 +187,7 @@ example hostname: arch
 \# %wheel ALL=(ALL) ALL
 
 
-### 17. Graphics Driver
+### <a name="17-graphics-driver">17. Graphics Driver</a>
 
 ```bash
 # pacman -S xf86-video-intel /Intel Driver/
@@ -194,13 +195,13 @@ example hostname: arch
 # pacman -S nvidia nvidia-utils /Nvidia Driver/
 ```
 
-### 18. Display Server
+### <a name="18-display-server">18. Display Server</a>
 
 ```bash
 # pacman -S xorg
 ```
 
-### 19. Display Manager
+### <a name="19-display-manager">19. Display Manager</a>
 
 \! IF no DM
 
@@ -215,13 +216,13 @@ exec startxfce4
 # systemctl enable lxdm.service
 ```
 
-### 20. Desktop Install
+### <a name="20-desktop-install">20. Desktop Install</a>
 
 ```bash
 # pacman -S xfce4 xfce4-goodies pulseaudio pavucontrol xdg-user-dirs
 ```
 
-### 21. Setup Fonts
+### <a name="21-fonts-configuration">21. Fonts Configuration</a>
 [https://wiki.archlinux.org/index.php/Font_configuration#Fontconfig_configuration](https://wiki.archlinux.org/index.php/Font_configuration#Fontconfig_configuration)
 
 ```bash
