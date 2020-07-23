@@ -47,7 +47,6 @@ timedatectl set-ntp true
 ```bash
 lsblk
 cfdisk /dev/sda
-lsblk
 ```
 
 #### b) Formatting
@@ -57,9 +56,11 @@ mkfs.ext4 /path-to-root
 mkswap /path-to-swap
 swapon /path-to-swap
 
-mkfs.ext4 /dev/sdx1
-mkswap /dev/sdx2
-swapon /dev/sdx2
+mkfs.ext4 /dev/sda1
+mkswap /dev/sda2
+swapon /dev/sda2
+mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda4
 ```
 
 #### c) Mounting
@@ -67,10 +68,9 @@ swapon /dev/sdx2
 ```bash
 mount /path-to-root /mnt
 
-mount /dev/sdx1 /mnt/boot
-// SWAP no need to mount /dev/sdx2
-mount /dev/sdx3 /mnt
-mount /dev/sdx4 /mnt/home
+mount /dev/sda1 /mnt/boot
+mount /dev/sda3 /mnt
+mount /dev/sda4 /mnt/home
 
 lsblk
 ```
