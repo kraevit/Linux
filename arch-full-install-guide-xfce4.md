@@ -176,7 +176,7 @@ example hostname: arch
 ### <a name="18-display-server">18. Display Server</a>
 
 ```bash
-# pacman -S xorg
+# pacman -S xorg xorg-xinit
 ```
 
 ### <a name="19-display-manager">19. Display Manager</a>
