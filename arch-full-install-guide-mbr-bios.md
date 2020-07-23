@@ -1,6 +1,31 @@
 # Arch Linux Full Install on MBR/Bios with XFCE4
 
-### 1. Internet Configuration
+1. [Internet Configuration](#1-internet-configuration)
+2. Disks
+  a) Partitioning
+  b) Formatting
+  c) Mounting
+3. Base Install
+4. FSTAB File
+5. Enter Install
+6. Time Zone
+7. Locales
+8. Hostname
+9. Hosts file
+10. Root Password
+11. Boot Loader
+12. Exit Install
+13. Unmount
+14. Reboot
+15. Activate Internet
+16. New User
+17. Graphics Driver
+18. Display Server
+19. Display Manager
+20. Desktop Install
+21. Setup Fonts
+
+### <a name="1-internet-configuration">1. Internet Configuration</a>
 
 ```bash
 # ip a
