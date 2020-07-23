@@ -1,5 +1,4 @@
 # Arch Linux Full Install on MBR/Bios with XFCE4
----
 
 ### 1. Internet Configuration
 
