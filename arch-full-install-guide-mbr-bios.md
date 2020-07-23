@@ -2,9 +2,9 @@
 
 1. [Internet Configuration](#1-internet-configuration)
 2. [Disks](#2-disks)
-    2.1. [Partitioning](#2-a-partitioning)
-    2.2. [Formatting](#2-b-formatting)
-		2.3. [Mounting](#2-cmounting)
+  2.1. [Partitioning](#2-a-partitioning)
+  2.2. [Formatting](#2-b-formatting)
+  2.3. [Mounting](#2-cmounting)
 3. [Base Install](#3-base-install)
 4. [FSTAB File](#4-fstab-file)
 5. [Enter Install](#5-enter-install)
@@ -237,28 +237,28 @@ vim ~/.config/fontconfig/fonts.conf
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-	<match target="font">
-		<edit name="autohint" mode="assign">
-			<bool>false</bool>
-		</edit>
-		<edit name="hinting" mode="assign">
-			<bool>true</bool>
-		</edit>
-		<edit name="hintstyle" mode="assign">
-			<const>hintslight</const>
-		</edit>
-		<edit name="rgba" mode="assign">
-			<const>rgb</const>
-		</edit>
-		<edit name="lcdfilter" mode="assign">
-			<const>lcddefault</const>
-		</edit>
-	</match>
-	<match target="pattern">
-		<edit name="dpi" mode="assign">
-			<double>96</double>
-		</edit>
-	</match>
+  <fontconfig>
+    <match target="font">
+      <edit name="autohint" mode="assign">
+        <bool>false</bool>
+      </edit>
+      <edit name="hinting" mode="assign">
+        <bool>true</bool>
+      </edit>
+      <edit name="hintstyle" mode="assign">
+        <const>hintslight</const>
+      </edit>
+      <edit name="rgba" mode="assign">
+        <const>rgb</const>
+      </edit>
+      <edit name="lcdfilter" mode="assign">
+        <const>lcddefault</const>
+      </edit>
+    </match>
+    <match target="pattern">
+      <edit name="dpi" mode="assign">
+        <double>96</double>
+      </edit>
+    </match>
 </fontconfig>
 ```
