@@ -1,4 +1,4 @@
-1. [Internet Configuration](###1. Internet Configuration)
+[Internet Configuration](###1. Internet Configuration)
 
 
 ### 1. Internet Configuration
