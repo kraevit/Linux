@@ -42,7 +42,6 @@ timedatectl set-ntp true
 | BOOT | SWAP | ROOT | HOME |
 | ---- | ---- | ---- | ---- |
 | 300M | RAMx1.5 | 40G | 500G | 
-| ---- | ---- | ---- | ---- |
 | sda1 | sda2 | sda3 | sda4 |
 
 ```bash
