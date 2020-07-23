@@ -2,9 +2,9 @@
 
 1. [Internet Configuration](#1-internet-configuration)
 2. [Disks](#2-disks)
-  2.a [Partitioning](#2-a-partitioning)
-  2.b [Formatting](#2-b-formatting)
-  2.c [Mounting](#2-cmounting)
+  a). [Partitioning](#2-a-partitioning)
+  b). [Formatting](#2-b-formatting)
+  c). [Mounting](#2-cmounting)
 3. [Base Install](#3-base-install)
 4. [FSTAB File](#4-fstab-file)
 5. [Enter Install](#5-enter-install)
