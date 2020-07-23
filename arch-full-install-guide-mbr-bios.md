@@ -7,7 +7,7 @@
 5. [Enter Install](#5-enter-install)
 6. [Time Zone](#6-time-zone)
 7. [Locales](#7-locales)
-8. [Hostname](#8-hostiname)
+8. [Hostname](#8-hostname)
 9. [Hosts file](#9-hosts-file)
 10. [Root Password](#10-root-password)
 11. [Boot Loader](#11-boot-loader)
