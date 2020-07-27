@@ -1,0 +1,26 @@
+# openssh
+#
+
+# installation
+
+sudo apt install openssh-server
+
+# configuration file
+
+vim /etc/ssh/sshd_config
+
+# firewall
+
+sudo apt install ufw
+sudo ufw enable
+sudo ufw allow 22/tcp
+
+# install "putty" on windows
+
+||
+
+# connect using ssh from linux
+# command:
+
+ssh username@server-ip-address
+
