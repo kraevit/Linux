@@ -1,9 +1,6 @@
-# horrow's Arch Linux Installation Guide 2019 
+# ArchLinux base intallation
 
-// comment
-# command
-
-// Verify the boot mode
+### 1. Verify the boot mode
 
 # ls /sys/firmware/efi/efivars
 
