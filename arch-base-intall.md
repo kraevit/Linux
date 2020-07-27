@@ -1,4 +1,4 @@
-# ArchLinux base intallation
+# ArchLinux Base Intallation Guide
 
 ### 1. Verify the boot mode
 
