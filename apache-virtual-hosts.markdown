@@ -62,12 +62,13 @@ ServerAlias www.userB.com
 
 ### 9. Add <Directory> below DocumentRoot
 
+```apache
 <Directory /home/userA/public_html/>
   Options Indexes FollowSymLinks
   AllowOverride all (Allows .htaccess to Override Default Apache Conf on a Directory Bases)
   Require all granted
 </Directory>
-
+```
 
 <Directory /home/userB/public_html/>
   Options Indexes FollowSymLinks
