@@ -36,7 +36,7 @@ cp 000-default.confs userA.conf
 cp 000-default.confs userB.conf
 ```
 
-### 6. Edit configuration files as follow
+### 6. Edit Conf Files (Examples)
 
 ```bash
 vim userA.conf
