@@ -1,4 +1,4 @@
-(`sudo` omitted for brevity)
+```bash
 `pacman -S {pkg}` install {pkg}
 `pacman -Syu` update package database and upgrade installed packages
 `pacman -Sy` update package database
@@ -18,3 +18,4 @@
 `pacman -Qdt` display orphaned dependencies
 `pacman -Ss` search remote repository for package
 `pacman -Qs` search local repository for package
+```
