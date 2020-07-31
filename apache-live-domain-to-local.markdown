@@ -42,6 +42,6 @@ touch index.html
 service apache2 restart
 ```
 
-# 4. Go to the Hosting Provider Panel /SuperHosting/
+### 4. Go to the Hosting Provider Panel /SuperHosting/
 
 Manage Domains -> Domain Settings -> Manage DNS -> TYPE A NAME @ -> Enter Your Static IP Address
