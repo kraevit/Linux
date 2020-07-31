@@ -45,20 +45,28 @@ vim userB.conf
 
 Example begining of the file!!! NOTE PORT
 
+```apache
 <VirtualHost *:80>
+```
 
 ### 7. Change DocumentRoot
 
+```apache
 DocumentRoot  /home/userA/public_html/
 DocumentRoot  /home/userB/public_html/
+```
 
 ### 8. Add ServerName
 
+```apache
 ServerName  userA.com
 ServerAlias www.userA.com
+```
 
+```apache
 ServerName  userB.com
 ServerAlias www.userB.com
+```
 
 ### 9. Add <Directory> below DocumentRoot
 
@@ -70,11 +78,13 @@ ServerAlias www.userB.com
 </Directory>
 ```
 
+```apache
 <Directory /home/userB/public_html/>
   Options Indexes FollowSymLinks
   AllowOverride all (Allows .htaccess to Override Default Apache Conf on a Directory Bases)
   Require all granted
 </Directory>
+```
 
 ### 10. Enable Both Sites
 
