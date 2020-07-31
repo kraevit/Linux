@@ -89,8 +89,8 @@ ServerAlias www.userB.com
 ### 10. Enable Both Sites
 
 ```bash
-sudo a2ensite userA.conf
-sudo a2ensite userB.conf
+a2ensite userA.conf
+a2ensite userB.conf
 ```
 
 ### 11. Restart apache2 Service
@@ -101,5 +101,7 @@ systemctl reload apache2
 
 ### 12. Modify hosts File
 
+```bash
 127.0.0.1 userA.com
 127.0.0.1 userB.com
+```
