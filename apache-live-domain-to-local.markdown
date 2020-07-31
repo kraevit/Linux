@@ -1,6 +1,6 @@
 # How to Point a Domain Name to Local Server ?
 
-Link: [YouTube](#https://www.youtube.com/watch?v=aPqDQX5naHA) 
+Link: [YouTube](https://www.youtube.com/watch?v=aPqDQX5naHA) 
 
 Ubuntu Linux:
 
@@ -28,10 +28,10 @@ vim /etc/apache2/sites-available/your-domain-name.com.conf
 	ServerName www.your-domain-name.com
 	ServerName your-domain-name.com
 	ServerAdmin your-email@gmail.com
-    DocumentRoot /var/www/your-domain-name/public_html
+	DocumentRoot /var/www/your-domain-name/public_html
 ```
 
-FOr Setting UP Secondary Domain Name Do the Same as Above
+For Setting UP Secondary Domain Name Do the Same as Above
 
 ```bash
 a2ensite your-domain-name.com.conf
@@ -44,6 +44,4 @@ service apache2 restart
 
 # 4. Go to the Hosting Provider Panel /SuperHosting/
 
-Manage Domains -> Domain Settings -> Manage DNS -> TYPE A NAME @ -> Enter 
-
-Your Static IP Address
+Manage Domains -> Domain Settings -> Manage DNS -> TYPE A NAME @ -> Enter Your Static IP Address
