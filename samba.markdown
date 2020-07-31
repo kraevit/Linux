@@ -23,7 +23,7 @@ IP address example:
 192.168.0.100/24  (/24 Represents the Subnet Mask E.G. 255.255.255.0)
 
 Gateway:
-________
+____________
 
 Name Server:
 Should be the Same as Gateway
