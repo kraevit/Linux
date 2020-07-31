@@ -2,7 +2,7 @@
 
 LINK: [Youtube](https://www.youtube.com/watch?v=RDwoDj2cW6c)
 
-### 1. Enter hostname (Installation Process from Ubuntu Serve .ISO)
+### 1. Enter hostname (Examples from Installation Process on Ubuntu Server .ISO)
 
 Please enter the hostname for this system
 
@@ -38,7 +38,7 @@ Leave it blank/empty
 
 Full name for the new user:
 
-Krasimir Kraev
+Pesho Peshev
 
 User name for your account:
 
