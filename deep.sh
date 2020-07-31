@@ -1,66 +1,56 @@
-#!/bin/sh
+#!/bin/bash
 
-## deep.sh ##
-################
+echo -e "deep.sh script by horrow (Debian) \n\n"
+echo -e "Kill script by pressing Cntr+C \n"
 
-echo -e "deep.sh script by horrow \n\n"
-echo -e "To stop the script press Cntrl+C\n"
+echo -e "Checking if TOR is installed? \n"
 
-## Check if tor is installed? ##
-################################
-echo -e "Checking if tor is installed ... ?\n"
 TOR="/etc/init.d/tor"
-
-if [ -f $TOR ];
-then
-  echo -e "Tor is installed on your system!\n"
-  echo -e "starting Tor :)\n"
-  sudo service tor start
+if [[ -f $TOR ]]; then
+	echo -e "TOR is intalled on your system! \n"
+	echo -e "Starting TOR :) \n"
+	systemctl start tor
 else
-  echo -e "Tor is not installed! You can install it by the following command: apt update && apt install tor\n"
-exit
+	echo -e "TOR is not installed. You can install it by apt update && apt install tor \n"
+	exit
 fi
 
-## Check if proxychains is installed? ##
-########################################
-echo -e "Checking if proxychains is installed ... ?\n"
+echo -e "Checking if PROXYCHAINS is installed? \n"
+
 PROXYCHAINS="/etc/proxychains.conf"
-
-if [ -f $PROXYCHAINS ];
-then
-  echo -e "proxychains is installed on your system!\n"
+if [[ -f $PROXYCHAINS ]]; then
+	echo -e "PROXYCHAINS is intalled on your system! \n"
 else
-  echo -e "proxychains is not installed! You can install it by the following command: apt update && apt install proxychains\n"
-exit
+	echo -e "PROXYCHAINS is not installed. You can install it by apt update && apt install proxychains \n"
+	exit
 fi
 
-## Set timeout to restart tor to change IP in Seconds. ##
-#########################################################
-echo -e "Please enter how many seconds(at least 30sec) you want to grab a new IP: \c"
+# SETup a TIMEOUT to restart TOR to change IP in Seconds
+echo -e "Please, enter how many seconds(min 30s) you want to grab a new IP: \c"
+
 read TIMER
-
-if [ "$TIMER" -lt "30" ];
-then
-  echo -e "WARN: Less than 30 seconds is not suggested due to timeout errors!\n"
-  echo -e "Setting up timer, please standby...\n"
+if [[ "$TIMER" -lt "30" ]]; then
+	echo -e "Warning! Less than 30 seconds is not suggested due to timeout errors. \n"
+	echo -e "Setting up timer ... \n"
 fi
 
-function control_c {
-  echo -en "\nGoodbye - Happy hacking!\n"
-  service tor stop
-  echo -en "Tor has been stopped. You are no longer hidden!\n"
-  exit $?
+
+control_c() {
+	echo -en "\n Goodbye: Happy hacking! \n"
+	systemctl stop tor
+	echo -en "TOR has been killed. You are no longer hidden! \n"
+	echo -e "Error: Launching the missles now!"
+	exit $?
 }
 
-## Capture SIGINT (Ctrl-C) and exit the script clean. ##
-########################################################
+# Capture SIGINT(CNTR+C) and kill the script
 trap control_c SIGINT
 
-## Switch IP Addr ##
-####################
-for (( ; ; ))
-do
-  sleep $TIMER
-  service tor restart
-  echo -e "$TIMER Seconds until next IP change \n"
+# Grab new IP address
+for (( ; ; )); do # INFINITY LOOP
+	sleep $TIMER
+	systemctl restart tor
+	echo -e "$TIMER seconds untils next IP change ... \n"
 done
+
+# END
