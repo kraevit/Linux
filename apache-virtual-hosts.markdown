@@ -1,6 +1,6 @@
 # Setup Apache Virtual Hosts
 
-! "sudo" Omitted for Clarity
+"sudo" Omitted for Clarity
 
 ### 1. Create Linux User Accounts
 
