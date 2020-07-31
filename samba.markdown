@@ -2,7 +2,6 @@
 
 LINK: [Youtube](https://www.youtube.com/watch?v=RDwoDj2cW6c)
 
-
 ### 1. Enter hostname (Installation Process from Ubuntu Serve .ISO)
 
 Please enter the hostname for this system
