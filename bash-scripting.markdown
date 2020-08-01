@@ -27,14 +27,14 @@ echo "Hello $YOUR_NAME, Nice to Meet You!"
 
 ### SIMPLE IF STATEMENT
 ```bash
-if [ "$YOUR_NAME" == "Pesho" ]; then
+if [[ "$YOUR_NAME" == "Pesho" ]]; then
   echo "Your Name is Pesho!"
 fi
 ```
 
 ### IF-ELSE
 ```bash
-if [ "$MY_NAME" == "Horrow" ]; then
+if [[ "$MY_NAME" == "Horrow" ]]; then
   echo "Your Name is Horrow"
 else
   echo "Your Name is NOT Horrow"
@@ -43,9 +43,9 @@ fi
 
 ### ELIF
 ```bash
-if [ "$YOUR_NAME" == "Pesho" ]; then
+if [[ "$YOUR_NAME" == "Pesho" ]]; then
   echo "Your Name is Pesho"
-elif [ "$YOUR_NAME" == "Lesho" ]; then
+elif [[ "$YOUR_NAME" == "Lesho" ]]; then
   echo "Your Name is Lesho"
 else
   echo "Your Name is not Horrow"
@@ -57,7 +57,7 @@ fi
 NUM1=3
 NUM2=5
 
-if [ "$NUM1" -gt "$NUM2" ]; then
+if [[ "$NUM1" -gt "$NUM2" ]]; then
   echo "$NUM1 is Greater than $NUM2"
 else
   echo "$NUM1 is Less than $NUM2"
@@ -75,7 +75,7 @@ fi
 ```bash
 FILE="text.txt"
 
-if [ -f "$FILE" ]; then
+if [[ -f "$FILE" ]]; then
   echo "$FILE is a File :)"
 else
   echo "$FILE is NOT a File ;("
