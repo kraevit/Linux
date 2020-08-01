@@ -45,8 +45,8 @@ control_c() {
 trap control_c SIGINT
 
 # Grab New IP
-#for (( ; ; )); do # INFINITY LOOP
-for true; do
+#for (( ; ; )); # Infinity Loop Using for
+while true; do # Infinity Loop Using while
   sleep $TIMER
   systemctl restart tor
   echo -e "$TIMER Seconds Until Next IP Change. \n"
