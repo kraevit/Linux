@@ -44,7 +44,7 @@ control_c() {
 }
 trap control_c SIGINT
 
-# Grab new IP address
+# Grab New IP
 #for (( ; ; )); do # INFINITY LOOP
 for true; do
   sleep $TIMER
