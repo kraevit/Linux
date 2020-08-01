@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the Current Date
-BACKUP_TIME=`date +%b-%d-%y`
+BACKUP_TIME="date +%d-%m-%y"
 
 # The Folder that Contains the Files that We Want to Backup
 SOURCE="/home/usr/path/data_folder "
