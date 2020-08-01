@@ -9,58 +9,58 @@ echo "Hello World"
 ```
 
 ### Variables
-### Uppercase by convention
-### Letters, numbers, underscores
+#### Uppercase by Convention
+#### Letters, Numbers, Underscores
 ```bash
-MY_NAME="Horrow"
-echo "My name is $MY_NAME"
-echo "My name is ${MY_NAME}"
+FIRST_NAME="Krasimir"
+echo "My Name is $FIRST_NAME" # Bash Syntax
+echo "My Name is ${FIRST_NAME}"  # JacaSript like Syntax
 ```
 
 ### User Input
 ```bash
-read -p "Enter your name: " YOUR_NAME
-echo "Hello ${YOUR_NAME}, nice to meet you!"
+read -p "Enter Your Name: " YOUR_NAME
+echo "Hello $YOUR_NAME, Nice to Meet You!"
 ```
 
-### Conditionals
+### CONDITIONALS
 
-### Simple If Statemnt
+### SIMPLE IF STATEMENT
 ```bash
-if [ "${MY_NAME}" == "Horrow" ]; then
-	echo "Your name is Horrow"
+if [ "$YOUR_NAME" == "Pesho" ]; then
+	echo "Your Name is Pesho!"
 fi
 ```
 
-### If-Else
+### IF-ELSE
 ```bash
-if [ "${MY_NAME}" == "Horrow" ]; then
-	echo "Your name is Horrow"
+if [ "$MY_NAME" == "Horrow" ]; then
+	echo "Your Name is Horrow"
 else
-	echo "Your name is not Horrow"
+	echo "Your Name is NOT Horrow"
 fi
 ```
 
-### Else If (elif)
+### ELIF
 ```bash
-if [ "${MY_NAME}" == "Horrow" ]; then
-	echo "Your name is Horrow"
-elif [ "${MY_NAME}" == "Jack" ]; then
-	echo "Your name is Jack"
+if [ "$YOUR_NAME" == "Pesho" ]; then
+	echo "Your Name is Pesho"
+elif [ "$YOUR_NAME" == "Lesho" ]; then
+	echo "Your Name is Lesho"
 else
-	echo "Your name is not Horrow"
+	echo "Your Name is not Horrow"
 fi
 ```
 
-### Comparison
+### COMPARISON
 ```bash
 NUM1=3
 NUM2=5
 
-if [ "${NUM1}" -gt "${NUM2}"]; then
-	echo "${NUM1} is greater than ${$NUM2}"
+if [ "$NUM1" -gt "$NUM2" ]; then
+	echo "$NUM1 is Greater than $NUM2"
 else
-	echo "${NUM1} is less than ${$NUM2}"
+	echo "$NUM1 is Less than $NUM2"
 fi
 
 ###########
@@ -73,14 +73,14 @@ fi
 ###########
 ```
 
-### File Conditions
+### FILE CONDITIONS
 ```bash
 FILE="text.txt"
 
-if [ -f "${FILE}"]; then
-	echo "${FILE} is a file"
+if [ -f "$FILE" ]; then
+	echo "$FILE is a File :)"
 else
-	echo "${FILE} is NOT a file"
+	echo "$FILE is NOT a File ;("
 fi
 
 ###########
@@ -95,24 +95,23 @@ fi
 ###########
 ```
 
-### Case Statement
+### CASE STATEMENT
 ```bash
-read -p "Are you 21 or older? Y/N " ANSWER
-
-case "${ANSWER}" in
-	[yY] | [yY][eE][sS]) # | means OR
-		echo "You can have a beer :)"
-		;;
-	[nN] | [nN][oO]) # | means OR
-		echo "Sorry, no drinking"
-		;;
-	*) # DEFAULT CASE
-		echo "Please enter y/yes or n/no"
-		;;
-esac
+read -p "Are You 18 or Older? Y/N " ANSWER
+case "$ANSWER" in
+	[yY] | [yY][eE][sS]) # yY OR yYeEsS
+		echo "You can have a Beer!"
+		;; # Break
+	[nN] | [nN][oO]) # nN OR nNoO
+		echo "Sorry, NO Drinking!"
+		;; # Break
+	*) # Default
+		echo "Please Enter y/yes or n/no"
+		;; # Break
+esac # THE END OF BLOCK
 ```
 
-### Simple for Loop
+### SIMPLE FOR LOOP
 ```bash
 NAMES="BRAD Kevin Alice MARK"
 for NAME in $NAMES
@@ -128,39 +127,39 @@ touch 1.txt 2.txt 3.txt
 
 FILES=$(ls *.txt)
 NEW="new"
-for FILE in $FILES
-	do
-		echo "Renaming $FIlE to new-$FILE"
-		mv $FILE $NEW-$FILE
+for FILE in $FILES; do
+  echo "Renaming $FIlE to new-$FILE"
+	mv $FILE $NEW-$FILE
 done
 ```
 
-### WHILE Loops: READ trough a file line by line
+### WHILE LOOPS - READ TROUGH A FILE LINE BY LINE
 ```bash
+#
+# ..................................../ :) :) :)
 LINE=1
-while read -r CURRENT_LINE
-	do
-		echo "$LINE: $CURRENT_LINE"
-		((LINE++))
+while read -r CURRENT_LINE; do
+	echo "$LINE: $CURRENT_LINE"
+	((LINE++))
 done < "./new-1.txt"
 ```
 
-### Functions
+### FUNCTIONS
 ```bash
 function sayHello() {
 	echo "Hello Wolrd"
 }
 
-sayHello
+sayHello # Function Invocation! # Notice not using ();
 ```
 
-### Function with Params
+### FUNCTION WITH PARAMETERS
 ```bash
 function greet() {
-	echo "Hello, Iam $1 and im $2"
+	echo "Hello, Iam $1 and im $2" # Numbered Parameters
 }
 
-greet "Brad" "25"
+greet "Brad" "25" # Function Invocation! and Passing Parameters As Input / YES :D
 ```
 
 ### CREATE FOLDER AND WRITE TO A FILE
@@ -170,4 +169,3 @@ touch "hello/world.txt"
 echo "Hello World!" >> "hello/world.txt"
 echo "Created hello/world.txt"
 ```
-### END
