@@ -37,18 +37,18 @@ fi
 if [ "$MY_NAME" == "Horrow" ]; then
   echo "Your Name is Horrow"
 else
-	echo "Your Name is NOT Horrow"
+  echo "Your Name is NOT Horrow"
 fi
 ```
 
 ### ELIF
 ```bash
 if [ "$YOUR_NAME" == "Pesho" ]; then
-	echo "Your Name is Pesho"
+  echo "Your Name is Pesho"
 elif [ "$YOUR_NAME" == "Lesho" ]; then
-	echo "Your Name is Lesho"
+  echo "Your Name is Lesho"
 else
-	echo "Your Name is not Horrow"
+  echo "Your Name is not Horrow"
 fi
 ```
 
@@ -58,9 +58,9 @@ NUM1=3
 NUM2=5
 
 if [ "$NUM1" -gt "$NUM2" ]; then
-	echo "$NUM1 is Greater than $NUM2"
+  echo "$NUM1 is Greater than $NUM2"
 else
-	echo "$NUM1 is Less than $NUM2"
+  echo "$NUM1 is Less than $NUM2"
 fi
 
 ###########
@@ -78,9 +78,9 @@ fi
 FILE="text.txt"
 
 if [ -f "$FILE" ]; then
-	echo "$FILE is a File :)"
+  echo "$FILE is a File :)"
 else
-	echo "$FILE is NOT a File ;("
+  echo "$FILE is NOT a File ;("
 fi
 
 ###########
@@ -99,15 +99,15 @@ fi
 ```bash
 read -p "Are You 18 or Older? Y/N " ANSWER
 case "$ANSWER" in
-	[yY] | [yY][eE][sS]) # yY OR yYeEsS
-		echo "You can have a Beer!"
-		;; # Break
-	[nN] | [nN][oO]) # nN OR nNoO
-		echo "Sorry, NO Drinking!"
-		;; # Break
-	*) # Default
-		echo "Please Enter y/yes or n/no"
-		;; # Break
+  [yY] | [yY][eE][sS]) # yY OR yYeEsS
+    echo "You can have a Beer!"
+    ;; # Break
+  [nN] | [nN][oO]) # nN OR nNoO
+    echo "Sorry, NO Drinking!"
+    ;; # Break
+  *) # Default
+    echo "Please Enter y/yes or n/no"
+    ;; # Break
 esac # THE END OF BLOCK
 ```
 
@@ -128,7 +128,7 @@ FILES=$(ls *.txt)
 NEW="new"
 for FILE in $FILES; do
   echo "Renaming $FIlE to new-$FILE"
-	mv $FILE $NEW-$FILE
+  mv $FILE $NEW-$FILE
 done
 ```
 
@@ -138,15 +138,15 @@ done
 # ..................................../ :) :) :)
 LINE=1
 while read -r CURRENT_LINE; do
-	echo "$LINE: $CURRENT_LINE"
-	((LINE++))
+  echo "$LINE: $CURRENT_LINE"
+  ((LINE++))
 done < "./new-1.txt"
 ```
 
 ### FUNCTIONS
 ```bash
 function sayHello() {
-	echo "Hello Wolrd"
+  echo "Hello Wolrd"
 }
 
 sayHello # Function Invocation! # Notice not using ();
@@ -155,7 +155,7 @@ sayHello # Function Invocation! # Notice not using ();
 ### FUNCTION WITH PARAMETERS
 ```bash
 function greet() {
-	echo "Hello, Iam $1 and im $2" # Numbered Parameters
+  echo "Hello, Iam $1 and im $2" # Numbered Parameters
 }
 
 greet "Brad" "25" # Function Invocation! and Passing Parameters As Input / YES :D
