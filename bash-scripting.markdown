@@ -28,14 +28,14 @@ echo "Hello $YOUR_NAME, Nice to Meet You!"
 ### SIMPLE IF STATEMENT
 ```bash
 if [ "$YOUR_NAME" == "Pesho" ]; then
-	echo "Your Name is Pesho!"
+  echo "Your Name is Pesho!"
 fi
 ```
 
 ### IF-ELSE
 ```bash
 if [ "$MY_NAME" == "Horrow" ]; then
-	echo "Your Name is Horrow"
+  echo "Your Name is Horrow"
 else
 	echo "Your Name is NOT Horrow"
 fi
@@ -114,9 +114,8 @@ esac # THE END OF BLOCK
 ### SIMPLE FOR LOOP
 ```bash
 NAMES="BRAD Kevin Alice MARK"
-for NAME in $NAMES
-	do
-		echo "Hello $NAME"
+for NAME in $NAMES; do
+  echo "Hello $NAME"
 done
 ```
 
