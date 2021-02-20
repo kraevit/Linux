@@ -53,11 +53,11 @@ mount /path-to-root /mnt
 
 ### <a name="3-base-install">3. Base Install</a>
 
-! For AMD CPU's install linux-firmaware microcode package
-! For Intel CPU's install intel-ucode microcode package
+! For AMD CPU's install ***amd-ucode*** microcode package
+! For Intel CPU's install ***intel-ucode*** microcode package
 
 ```bash
-# pacstrap /mnt base linux linux-firmware vim
+# pacstrap /mnt base linux amd-ucode vim
 # pacstrap /mnt base linux intel-ucode vim
 ```
 
