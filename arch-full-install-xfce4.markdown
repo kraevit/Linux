@@ -57,8 +57,8 @@ mount /path-to-root /mnt
 ! For Intel CPU's install ***intel-ucode*** microcode package
 
 ```bash
-# pacstrap /mnt base linux amd-ucode vim
-# pacstrap /mnt base linux intel-ucode vim
+# pacstrap /mnt base linux linux-firmware amd-ucode vim
+# pacstrap /mnt base linux linux-firmware intel-ucode vim
 ```
 
 
