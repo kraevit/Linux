@@ -1,0 +1,56 @@
+###### Modesetting (recommended) VS Intel ######
+
+# Modesetting #
+
+install these packages: mesa lib32-mesa vulcan-intel vulcan-icd-loader ocl-icd lib32-ocl-icd intel-compute-runtime
+
+Conf files for modesetting : 
+
+sudo vim /etc/X11/xorg.conf.d/20-modesetting.conf
+Section "Device"
+    Identifier  "Intel Graphics"
+    Driver      "modesetting"
+    Option      "AccelMethod"    "glamor"
+    Option      "DRI"            "3"      
+EndSection
+
+
+sudo vim /etc/X11/xorg.conf.d/modesetting.conf
+Section "Device"
+    Identifier  "modesetting"
+    Driver      "modesetting"
+EndSection
+
+# Intel #
+
+install this package: xf86-video-intel
+
+Conf files for intel :
+
+
+sudo vim /etc/modprobe.d/i915.conf
+options i915 enable_guc=2 enable_fbc=1 fastboot=1
+
+
+sudo vim /etc/X11/xorg.conf.d/20-intel.conf
+Section "Device"
+    Identifier  "Intel Graphics"
+    Driver      "intel"
+EndSection
+
+If you have any issues, try these -
+
+Screen tearing:
+
+    Option  "TearFree"  "true"
+    
+Default accelaration: SNA
+Alternative         : UXA
+
+    Option "AccelMethod"    "uxa"
+    
+Default DRI: 3
+
+    Option  "DRI"   "2"
+
+# END
