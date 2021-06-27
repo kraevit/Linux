@@ -1,0 +1,13 @@
+Arch howto install LTS kernel alongside latest one in the system ?
+
+Check wich packages are installed ?
+
+pacman -Qs linux
+
+pacman -Qs linux | grep linux
+
+pacman -Ss linux | grep lts
+
+sudo pacman -S linux-lts linux-lts-headers acpi_call-lts r8168-lts
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
