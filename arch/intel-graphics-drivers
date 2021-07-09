@@ -1,8 +1,8 @@
-Op###### Modesetting (recommended) VS Intel ######
+###### Modesetting (recommended) VS Intel ######
 
 # Modesetting #
 
-install these packages: mesa lib32-mesa vulcan-intel vulcan-icd-loader ocl-icd lib32-ocl-icd intel-compute-runtime
+install these packages: mesa lib32-mesa vulkan-intel vulkan-icd-loader ocl-icd lib32-ocl-icd intel-compute-runtime
 
 Conf files for modesetting : 
 
