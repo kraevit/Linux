@@ -1,0 +1,77 @@
+   
+1. APACHE server
+
+sudo pacman -S apache
+sudo systemctl enable --now httpd
+sudo vim /etc/httpd/conf/httpd.conf
+uncomment #unique_id_module
+sudo systemctl restart httpd
+test by opening the browser and type localhost
+   
+2. PHP modules
+
+sudo pacman -S php php-cgi php-gd php-pgsql php-apache
+sudo vim /etc/httpd/conf/httpd.conf
+comment mpm_event_module
+uncomment #mpm_prefork_module
+dont exit vim, go to the end of the file and add the following lines:
+
+LoadModule php_module modules/libphp.so
+AddHandler php-script .php
+Include conf/extra/php_module.conf
+
+Edit php.ini file in vim
+sudo vim /etc/php/php.ini
+
+search /mysqli
+
+uncomment ;extension=mysqli
+uncomment ;extension=gd
+
+test php
+
+sudo vim /srv/http/info.php
+
+enter <?php phpinfo(); ?>
+
+sudo systemctl restart httpd
+
+check the browser localhost/info.php
+
+
+3. DATABASE MariaDB
+
+sudo pacman -S mariadb libmariadbclient mariadb-clients
+
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+OR
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+sudo systemctl enable --now mysqld
+
+DATABASE SECURITY:
+
+sudo mysql_secure_installation
+
+sudo mysql -u root -p password
+
+MariaDB  [(none)]> CREATE DATABASE wpdb;
+MariaDB  [(none)]> CREATE USER 'developer'@'localhost' IDENTIFIED BY 'password here'; 
+MariaDB  [(none)]> GRANT ALL PRIVILEGES ON wpdb.* TO 'developer'@'localhost';
+MariaDB  [(none)]> FLUSH PRIVILEGES;
+
+4. WORDPRESS Setup
+cd /srv/http
+sudo pacman -S wget
+sudo wget https://wordpress.org/latest.tar.gz
+sudo tar xvzf laters.tar.gz
+sudo chown -R root:http /srv/http/wordpress/
+
+cd wordpress/
+sudo cp wp-config-sample.php wp-config.php
+sudo vim wp-config.php
+edit DB_NAME and DB_USER
+save and exit vim
+
+Open firefox
+type localhost/wordpress

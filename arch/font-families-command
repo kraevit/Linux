@@ -1,0 +1,6 @@
+
+sudo pacman -S ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family
+
+yay -S ttf-google-fonts-git
+
+pacman -Rns xorg-fonts-75dpi xorg-fonts-100dpi
